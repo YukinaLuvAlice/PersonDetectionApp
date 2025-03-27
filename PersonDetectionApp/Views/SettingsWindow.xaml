@@ -1,0 +1,70 @@
+﻿<Window x:Class="PersonDetectionApp.Views.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cài đặt" Height="350" Width="500"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" 
+                   Text="Cài đặt ứng dụng" 
+                   FontSize="18" FontWeight="Bold" 
+                   Margin="0,0,0,15"/>
+
+        <!-- Tự động khởi động -->
+        <TextBlock Grid.Row="1" Grid.Column="0" 
+                   Text="Tự động khởi động khi Windows bật:" 
+                   VerticalAlignment="Center"/>
+        <CheckBox Grid.Row="1" Grid.Column="1" 
+                  x:Name="chkAutoStart" 
+                  VerticalAlignment="Center"/>
+
+        <!-- Độ nhạy nhận diện người -->
+        <TextBlock Grid.Row="2" Grid.Column="0" 
+                   Text="Độ nhạy nhận diện người:" 
+                   VerticalAlignment="Center" 
+                   Margin="0,10,0,0"/>
+        <Slider Grid.Row="2" Grid.Column="1" 
+                x:Name="sliderPersonSensitivity" 
+                Minimum="1" Maximum="10" Value="5" 
+                TickFrequency="1" IsSnapToTickEnabled="True" 
+                TickPlacement="BottomRight" 
+                Margin="0,10,0,0"/>
+
+        <!-- Độ nhạy nhận diện khuôn mặt -->
+        <TextBlock Grid.Row="3" Grid.Column="0" 
+                   Text="Độ nhạy nhận diện khuôn mặt:" 
+                   VerticalAlignment="Center" 
+                   Margin="0,10,0,0"/>
+        <Slider Grid.Row="3" Grid.Column="1" 
+                x:Name="sliderFaceSensitivity" 
+                Minimum="1" Maximum="10" Value="5" 
+                TickFrequency="1" IsSnapToTickEnabled="True" 
+                TickPlacement="BottomRight" 
+                Margin="0,10,0,0"/>
+
+        <!-- Nút bấm -->
+        <StackPanel Grid.Row="5" Grid.Column="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Right">
+            <Button x:Name="btnSave" Content="Lưu" 
+                    Width="80" Margin="0,0,10,0" 
+                    Click="btnSave_Click"/>
+            <Button x:Name="btnCancel" Content="Huỷ" 
+                    Width="80" 
+                    Click="btnCancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
